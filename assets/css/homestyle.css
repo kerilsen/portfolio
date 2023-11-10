@@ -1,0 +1,154 @@
+:root {
+    --light-blue: rgb(233, 239, 244);
+    --lilac: rgb(236, 224, 236);
+    --pink: rgb(253, 236, 240);
+    --dark: rgb(168, 114, 152);
+    --script: 'League Script', cursive;
+    --type: 'Lora', serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--dark);
+}
+
+p {
+    font-size: 1.5rem;
+    text-transform: lowercase;
+    font-family: var(--script);
+    font-weight: 600;
+}
+
+body {
+    padding-bottom: 10rem;
+}
+
+nav {
+    overflow: hidden;
+    background-color: var(--light-blue);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+/* top "keri sen" logo */
+h1 {
+    margin-left: 10rem;
+    font-family: var(--script);
+    font-size: 5rem;
+    line-height: 40%;
+}
+
+/* sidebar "about me" */
+h2 {
+    font-family: var(--script);
+    font-size: 3rem;
+}
+
+/* app titles */
+h3 {
+    font-family: var(--type);
+    font-size: 2rem;
+    position: relative;
+}
+
+#navbar {
+    display: flex;
+    margin: 2rem 10rem 1rem 0rem;
+    font-family: 'League Script', cursive;
+    color: black;
+    font-size: 1.5em;
+}
+
+#navbar a {
+    margin: 0 1rem 0 1rem;
+}
+
+.grid {
+    margin: 15rem 6rem 10rem 6rem;
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.responsive {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+article:hover {
+    opacity: 1;
+}
+
+article {
+    opacity: .4;
+    transition: opacity 0.5s;
+}
+
+.sidebar {
+    grid-column: 3;
+    grid-row: 1 / 5;
+    background-color: var(--lilac);
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.spotlight {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    background-color: var(--pink);
+    position: relative;
+}
+
+.project {
+    background-color: var(--pink);
+    position: relative;
+}
+
+.app-title {
+    position: absolute;
+    margin: 2rem 0 1rem 0;
+    padding: 0.5rem 1rem;
+    z-index: 2;
+    /* border: 1px solid black; */
+    border-radius: 0px 50px 50px 0px;
+    background-color: white;
+    opacity: 0.7;
+}
+
+.caption {
+    position: absolute;
+    width: 100%;
+    height: 2rem;
+    bottom: 8px;
+    background-color: #ffffff;
+    text-align: center;
+    z-index: 2;
+    opacity: 0.7;
+}
+
+#bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--light-blue);
+    font-family: var(--klee);
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 10rem 2rem 10rem;
+}
