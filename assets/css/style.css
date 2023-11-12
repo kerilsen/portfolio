@@ -3,25 +3,15 @@
     --lilac: rgb(236, 224, 236);
     --pink: rgb(253, 236, 240);
     --dark: rgb(168, 114, 152);
+    --light: rgb(239, 233, 223);
     --script: 'League Script', cursive;
     --type: 'Lora', serif;
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-    font-weight: 600;
-}
-
-p {
-    font-size: 1.5rem;
-    text-transform: lowercase;
-    font-family: var(--script);
-    font-weight: 600;
 }
 
 body {
@@ -31,6 +21,12 @@ body {
     /* 21px equivalent to 1.3125rem */
     padding-bottom: 5rem;
     line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
 }
 
 header {
@@ -60,6 +56,7 @@ h2 {
     font-family: var(--script);
     line-height: 1;
     font-size: 2.5rem;
+    text-align: center;
 }
 
 /* app titles */
@@ -68,6 +65,7 @@ h3 {
     position: relative;
 }
 
+/* container for logo and navigation */
 .split {
     display: flex;
     width: 100%;
@@ -75,13 +73,12 @@ h3 {
 }
 
 .topnav {
-    /* display: flex; */
+    display: flex;
     /* flex-wrap: wrap; */
     margin: 1.5rem 0;
-    font-family: 'League Script', cursive;
     color: black;
-    font-size: 1.5em;
-    justify-self: flex-end;
+    font-size: 1em;
+    /* justify-self: flex-end; */
 }
 
 .topnav a {
@@ -92,10 +89,6 @@ h3 {
     background-color: #ffffff;
     opacity: 0.7;
     border-radius: 50px;
-}
-
-.topnav .icon {
-    display: none;
 }
 
 .grid {
@@ -125,11 +118,11 @@ article {
 .sidebar {
     grid-column: 3;
     grid-row: 1 / 5;
-    background-color: var(--lilac);
+    background-color: var(--light);
     padding: 2rem;
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
+    text-align: left;
 }
 
 .spotlight {
@@ -164,6 +157,9 @@ article {
     text-align: center;
     z-index: 2;
     opacity: 0.7;
+    font-family: var(--script);
+    text-transform: lowercase;
+    font-size: 1.5em;
 }
 
 footer {
@@ -171,98 +167,56 @@ footer {
     bottom: 0;
     width: 100%;
     background-color: var(--light-blue);
-    font-family: var(--script);
     height: 8rem;
     padding: 2.5rem 10rem;
+    font-size: 1rem;
 }
 
+@media only screen and (max-width: 600px) {
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
-    .topnav a:not(:first-child) {
-        display: none;
+    .split {
+        flex-wrap: wrap;
+        flex-direction: column;
     }
 
-    .topnav a.icon {
-        float: right;
-        display: block;
+    .split>* {
+        flex-basis: 100%;
     }
-}
 
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
-    .topnav.responsive {
+    header {
         position: relative;
     }
 
-    .topnav.responsive a.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
+    .grid {
+        margin: 0;
+        display: grid;
+        width: 100%;
+        grid-template-columns: 100%;
+        gap: 3rem;
+        grid-auto-rows: minmax(100px, auto);
     }
 
-    .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
+    .sidebar {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .spotlight {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    footer {
+        position: relative;
+        padding: 0;
+        justify-content: center;
     }
 }
 
-/* .topnav a:not(:first-child) {
-        display: none;
-    }
-
-    .topnav a.icon {
-        align-self: flex-end;
-    } */
-
-/*   .topnav {
-        flex-direction: column;
-    } */
-
-.split {
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
-.split>* {
-    flex-basis: 100%;
-}
-
-header {
-    position: relative;
-}
-
-.grid {
-    margin: 0;
-    display: grid;
-    width: 100%;
-    grid-template-columns: 100%;
-    gap: 3rem;
-    grid-auto-rows: minmax(100px, auto);
-}
-
-.sidebar {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.spotlight {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-h1 {
-    font-size: 3rem;
-    align-self: center;
-}
-
-footer {
-    position: relative;
-    padding: 0;
-    justify-content: center;
-}
-}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
