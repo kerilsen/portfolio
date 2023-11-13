@@ -4,6 +4,7 @@
     --pink: rgb(253, 236, 240);
     --dark: rgb(168, 114, 152);
     --light: rgb(245, 239, 233);
+    --white: #ffffff;
     --script: 'League Script', cursive;
     --type: 'Lora', serif;
 }
@@ -94,7 +95,7 @@ h1 {
 }
 
 .topnav a.active {
-    background-color: #ffffff;
+    background-color: var(--white);
     opacity: 0.7;
     border-radius: 50px;
 }
@@ -137,6 +138,7 @@ article {
     display: flex;
     flex-wrap: wrap;
     text-align: left;
+    align-items: flex-start;
 }
 
 /* sidebar "about me" */
@@ -150,12 +152,10 @@ h2 {
 .spotlight {
     grid-column: 1;
     grid-row: 2;
-    background-color: var(--pink);
     position: relative;
 }
 
 .project {
-    background-color: var(--pink);
     position: relative;
 }
 
@@ -165,7 +165,7 @@ h2 {
     padding: 0.5rem 1rem;
     z-index: 2;
     border-radius: 0px 50px 50px 0px;
-    background-color: white;
+    background-color:var(--white);
     opacity: 0.7;
     max-width: 23rem;
 }
@@ -181,7 +181,7 @@ h3 {
     width: 100%;
     height: 2rem;
     bottom: 8px;
-    background-color: #ffffff;
+    background-color: var(--white);
     text-align: center;
     z-index: 2;
     opacity: 0.7;
