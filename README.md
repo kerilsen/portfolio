@@ -14,6 +14,8 @@ No installation is required to view the website.
 
 ## Usage
 
+The website is deployed at: [https://kerilsen.github.io/portfolio/index.html] https://kerilsen.github.io/portfolio/index.html
+
 Here are views of the portfolio from a few different devices.
 
 ![Screenshot of portfolio from iPhone 12 Pro](assets/images/iphone12pro.png)
